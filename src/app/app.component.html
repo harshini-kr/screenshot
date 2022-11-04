@@ -1,0 +1,31 @@
+<div id="node" #container>
+<hello name="{{ name }}"></hello>
+<p>
+  Start editing to see some magic happen :)
+</p>
+
+  <button (click)="helo()">Take</button>
+
+  <div class="dnd-container" appDragDrop (files)="onFileDropped($event)">
+    <div class="text-wrapper">
+      <div class="centered">Drop your file here!</div>
+    </div>
+  </div>
+
+
+    <div class="files-list">
+      <div class="single-file" *ngFor="let file of files; let i = index">
+        <div class="info">
+          <h4 class="name">
+            {{ file?.name }}
+          </h4>
+          <img [src]="file.url" style="width: 100px; height: 100px;" />
+
+        </div>
+        <span class="delete" width="20px" alt="file" (click)="deleteImage(file)">x</span>
+      </div>
+    </div>
+<!-- <iframe src="https://aivhub.com" height="400px" width="100%">
+</iframe> -->
+</div>
+
